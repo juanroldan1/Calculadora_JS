@@ -11,8 +11,13 @@ document.getElementsByClassName(tecla_8);
 document.getElementsByClassName(tecla_9);
 document.getElementsByClassName(tecla_AC);
 document.getElementsByClassName(tecla_mas_menos);
-document.getElementsByClassName(tecla_7);
-document.getElementsByClassName(tecla_8);
+document.getElementsByClassName(tecla_porcentaje);
+document.getElementsByClassName(tecla_division);
+document.getElementsByClassName(tecla_multiplicacion);
+document.getElementsByClassName(tecla_punto);
+document.getElementsByClassName(tecla_mas);
+document.getElementsByClassName(tecla_menos);
+document.getElementsByClassName(tecla_division);
 
 
 
