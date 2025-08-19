@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.contenedor-principal{
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.calculadora {
+    min-width: 24rem;
+    max-width: 32rem;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#historial{
+    min-width: 200px;
+    min-height: 300px;
+    background-color: rgb(123, 146, 240);
+    color: rgb(231, 231, 231);
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    text-align: left;
+    box-sizing: border-box;
+    margin-top: 30px;
+    overflow-y: auto;
+    max-height: 400px;
+}
+.borrarHistorial{
+    background-color: rgb(220, 53, 69);
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.borrarHistorial:hover{
+    background-color: rgb(101, 32, 32);
+}
+
+#teclado{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding: 1em;
+}
+
+.pantalla {
+    text-align: center;
+}
+
+#pantalla {
+    text-align: right;
+}
+
+#teclado button{
+    flex: 1;
+    transition: all 0.2s ease;
+}
+
+#teclado button:hover{
+    transform: scale(1.05);
+    color:rgb(231, 231, 231);
+    background-color: rgb(123, 146, 240);
+}
+
+.fila1, .fila2, .fila3, .fila4, .fila5 {
+    display: flex;
+    gap: 0px;
+}
+
+.fila1 button, .fila2 button, .fila3 button, .fila4 button, .fila5 button {
+    flex: 1;
+    padding: 25px;
+    font-size: 20px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+#num_pantalla {
+    height: 100px;
+    width: 100%;
+    font-size: 3rem;
+    text-align: right;
+    border: none;
+    background-color: rgb(123, 146, 240);
+    color:rgb(231, 231, 231);
+    padding-right: 10px;
+}
+
+#fondo {
+    display: flex;
+    height: 150px;
+    background-color: rgb(123, 146, 240);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    position: relative;
+}
+
+.fila5 .tecla_igual {
+    border-bottom-right-radius: 20px;
+    color:rgb(231, 231, 231);
+    background-color: rgb(123, 146, 240);
+}
+
+.fila1 > .tecla_AC, .fila1 > .tecla_borrar_historial {
+    background-color: rgb(123, 146, 240);
+    color:rgb(231, 231, 231);
+}
+
+#modo_oscuro {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+#borrar_historial {
+    background-color: rgb(220, 53, 69);
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#borrar_historial:hover {
+    background-color: rgb(200, 33, 49);
+}
+
+/* Estilos para el modo oscuro */
+.calculadora.modo-oscuro {
+    background-color: rgb(41, 38, 37);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.calculadora.modo-oscuro #fondo {
+    background-color: rgb(237, 120, 101);
+}
+
+.calculadora.modo-oscuro #num_pantalla {
+    background-color: rgb(237, 120, 101);
+    color: rgb(41, 38, 37);
+}
+
+.calculadora.modo-oscuro .fila1 button,
+.calculadora.modo-oscuro .fila2 button,
+.calculadora.modo-oscuro .fila3 button,
+.calculadora.modo-oscuro .fila4 button,
+.calculadora.modo-oscuro .fila5 button {
+    background-color: rgb(41, 38, 37);
+    color: #f5f5f5;
+}
+
+.calculadora.modo-oscuro .tecla_igual,
+.calculadora.modo-oscuro .tecla_AC,
+.calculadora.modo-oscuro .tecla_mas_menos,
+.calculadora.modo-oscuro .tecla_porcentaje,
+.calculadora.modo-oscuro .tecla_slash,
+.calculadora.modo-oscuro .tecla_multiplicar,
+.calculadora.modo-oscuro .tecla_resta,
+.calculadora.modo-oscuro .tecla_suma {
+    background-color: #f2a63d;
+}
+
+.calculadora.modo-oscuro #teclado button:hover {
+    background-color: rgb(237, 120, 101);
+}
+
+.calculadora.modo-oscuro .fila1 > .tecla_AC {
+    background-color: rgb(237, 120, 101);
+    color:rgb(231, 231, 231);
+}
+
+.calculadora.modo-oscuro .fila5 > .tecla_igual {
+    background-color: rgb(237, 120, 101);
+}
+
+#historial.modo-oscuro{
+    background-color: rgb(237, 120, 101);
+    color:rgb(0, 0, 0);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #historial {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 32rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+    
+    .calculadora {
+        min-width: 20rem;
+    }
+    
+    #num_pantalla {
+        font-size: 2.5rem;
+    }
+    
+    .fila1 button, .fila2 button, .fila3 button, .fila4 button, .fila5 button {
+        padding: 20px;
+        font-size: 18px;
+    }
+}
